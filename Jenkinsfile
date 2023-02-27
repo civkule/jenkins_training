@@ -11,7 +11,7 @@ def msg(i) {
 }
 
 pipeline {
-	agent { label "D4ML-Builder" }
+	agent { label "none" }
 	stages {
 		stage("Environment") {
 			steps {
