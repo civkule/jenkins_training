@@ -39,7 +39,6 @@ pipeline {
     }
     stage('Get CPU Usage') {
       steps {
-        sh '''#!/bin/bash
         echo '\n------------------------ CPU usage--------------------' && lscpu | grep -m 1 'CPU(s)'
           echo "CPU usage: $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage "%"}')"
 
