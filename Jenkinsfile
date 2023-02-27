@@ -1,19 +1,34 @@
- stages {
-        stage('Build') { 
-            steps { 
-                sh 'make' 
+// Declarative //
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-        stage('Test'){
+        stage('Test') {
             steps {
-                sh 'make check'
-                junit 'reports/**/*.xml' 
+                echo 'Testing..'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'make publish'
+                echo 'Deploying....'
             }
         }
+    }
+}
+// Script //
+node {
+    stage('Build') {
+        echo 'Building....'
+    }
+    stage('Test') {
+        echo 'Building....'
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
     }
 }
