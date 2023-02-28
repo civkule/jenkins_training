@@ -24,3 +24,10 @@ pipeline {
         echo "\n-----------------------------------------\n"
         echo 'Obtaining Disc space Usage: '
         df -h /
+                '''    
+      }
+    }
+  }
+}
+
+
