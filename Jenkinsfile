@@ -23,7 +23,7 @@ pipeline {
         $(cat /proc/meminfo | awk '/^Mem/ { printf("%s\t%0.3f GB\\n", $1, $2/1000000) }')"
         echo "\n----------------Disk space usage-------------------------\n"
         df -h | grep Filesystem && df -h | grep /dev/root
-           
+           '''
       }
     }
   }
