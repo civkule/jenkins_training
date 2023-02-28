@@ -5,6 +5,7 @@ pipeline {
     stage('get information') {
       steps {
         sh ''' #!/bin/bash/
+        set +x
         echo "\n------------------- Environment variables ------------------- \n
         $(printenv)"
         echo "\n------------------- Network Information -------------------" \n
