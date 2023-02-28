@@ -21,8 +21,8 @@ pipeline {
           echo "CPU usage: $(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage "%"}')"
         echo "\n------------------- RAM Usage ------------------- \n
         $(cat /proc/meminfo | awk '/^Mem/ { printf("%s\t%0.3f GB\\n", $1, $2/1000000) }')"
-        echo "\n----------------Disk space usage-------------------------\n
-        df -h | grep Filesystem && df -h | grep /dev/root"
+        echo "\n----------------Disk space usage-------------------------\n"
+        df -h | grep Filesystem && df -h | grep /dev/root
            '''
       }
     }
