@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('get information') {
       steps {
-        sh ''' #! /bin/bash/
+        sh ''' #!/bin/bash/
         set +x
         echo "\n------------------- Environment variables ------------------- \n
         $(printenv)"
